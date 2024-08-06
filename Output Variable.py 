@@ -1,0 +1,15 @@
+x = "Gary"
+y = "is"
+z = "Awesome"
+print(x+y+z) 
+#above using + symbols doesnt space out the sentence
+print(x,y,z )
+#above printing spaces it out and you dont need to add the spaces 
+# Global Variable below if prnted without a local then actioned
+x 
+#below is the function where i will add a local variable 
+def myfunc():
+# local variable below then added and it becomes the primary variable to use instead of the global 
+ x = "Rubbish" 
+print("python is " + x )
+myfunc()
