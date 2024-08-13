@@ -10,3 +10,13 @@ print(name[0])
 print(name[1])
 print(name[2])
 print(name[3])
+#####################Modifying strings##############
+x = "we love chelsea"
+#### changes to uppercase 
+print(x.upper())
+###takes out whitespace 
+print(x.strip())
+## replace words 
+print(x.replace("we", "I "))
+##split which creates a list
+print(x.split(","))
