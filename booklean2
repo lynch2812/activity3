@@ -1,0 +1,25 @@
+x = 2 
+y = 6
+if x>y:# if x is not greater than y it doesnt print the first statement it prints the second statement
+  print("x is greater than y")
+else:
+    
+ print("x is not greater than y")
+ ####boolean functions 
+#number = 0 
+# prints false if an odd number and if it is even true 
+ def is_even(number):
+   return number % 2  == 0 
+ result = is_even(5)
+
+ print(result)
+ ################ bool 
+print(bool("Hello"))
+print(bool(15))
+
+s = "Hello"
+t = 15
+
+print(bool(s))
+print(bool(t))
+

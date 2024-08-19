@@ -21,3 +21,4 @@ print(result_or)
 ##### Logical not returns the oppsotie boolean value
 result_not = not x # should return false 
 print(result_not)
+###################################################################
