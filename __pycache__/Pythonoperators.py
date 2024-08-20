@@ -95,3 +95,15 @@ outcast = 7 not in my_list
 print(even)
 print(odd)
 print(outcast)
+
+#########Identity operator 
+#is: True if two variables reference the same object 
+#is not: True if two variables reference different objects
+# 
+print("identity operator".upper())
+c = [1, 2, 3] 
+d = c
+# the below will = True because d  = c we are checking that they are the same object 
+same_operator = d is c
+print(same_operator)
+
