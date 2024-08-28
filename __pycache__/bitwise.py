@@ -23,3 +23,21 @@ print(result)
 a = 20
 result = a>>4
 print(result)
+#############  precedence
+#() evaluated first 
+# exponentiation are next 
+# multiplaction / division / and floor division are the same precedence 
+# addition and subtraction have the same precedence 
+# Bitwise left shift and bitwise right shift 
+#• Addition + and Subtraction-: Addition and subtraction have the same precedence and are evaluated from left to right.
+#• Bitwise Left Shift « and Bitwise Right Shift »: These bitwise shift operators have lower precedence than addition and subtraction.
+#• Bitwise AND &: Bitwise AND has lower precedence than bitwise shift operators.
+#• Bitwise XOR ^: Bitwise XOR has lower precedence than bitwise AND.
+#• Bitwise OR I: Bitwise OR has lower precedence than bitwise XOR.
+#• comparison Operators (< =,›, >, l= ==) and Identity Operators (is, is not): These operators are used for comparisons and have lower precedence than bitwise OR.
+# membership operators 
+#• Membership Operators (in, not in): Membership operators are used to test for membership in sequences and have lower precedence than comparison and identity operators.
+#• Logical NOT not: The logical NOT operator has lower precedence than membership operators.
+#• Logical AND: Logical AND has lower precedence than logical NOT.
+#• Logical OR or: Logical OR has the lowest precedence of all binary operators.
+#• When in doubt about the order of evaluation in complex expressions, it's a good practice to use parentheses to make your intentions clear. Parentheses override operator precedence and ensure that the enclosed expressions are evaluated first.
