@@ -23,13 +23,33 @@ footballers = (footballer1,footballer2,footballer3,footballer4,footballer5,footb
 print(f"Footballers involved: {len(footballers)}") # answer should be 6 
 print(f"Captains shirt number: {footballers.index(footballer3)}") #answer should be 2 
 
-# creating sets for goals scored per game and who has scored them 
-goals_scored = {4,5,3,5,6}
-scorers = {"Lewis", "Craig", "Lewis and Gary", "Mark, Darren and Luke", "Craig and Mark", "Gary,Mark and Luke"}
+# creating sets for goals scored per season and who has scored the most
+goals_scored = {4,5,3,5,6,1}
+scorers = {"Lewis", "Craig", "Gary", "Darren", "peter", "Gary"}
 
 # print out the answers 
 print(f"Goals scored: {goals_scored}")
 print(f"Scorers: {scorers}")
+
+# New scorer added to list  from below updating it using .update 
+new_scorer = {"Harry, Lucifer"}
+scorers.update(new_scorer)
+print(f"New Scorer added:{scorers}")
+scorers.remove("Gary")
+print(f"Mistake made, scorer taken out: {scorers}")
+#Frozen set confirming theses goals have ben scored 
+confirmedgoals= frozenset(goals_scored)
+print(f"Confirmed goals scored:{confirmedgoals}")
+
+# confirmedgoals.add(10) - if this comment note is taken away it will create an error as it is a frozen ist object 
+
+confirmed_scorers = frozenset(scorers)
+print(f" The confirmed scorers are in: {confirmed_scorers}")
+
+## completed the activity 
+
+
+
 
 
 
