@@ -21,3 +21,17 @@ def testerthree(food):
     print(x)
 meats = ["Pork", "Chicken", "Lamb"]
 testerthree(meats)
+
+# recursions 
+# calls itself 
+# benefit of loking through the data to get the result 
+print("###recursions###")
+def recursion_trial(k):
+    if(k >0):
+      result = k + recursion_trial(k - 1)
+      print(result)
+    else:
+      result =0
+    return result
+print("this is the results")
+recursion_trial(6)
