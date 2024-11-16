@@ -12,7 +12,7 @@ myarray= array('i', [1,2,3,4,5,6])
 # machine learning, and other fields requiring numerical computations.
 
 # using [1:4] for example would slice and output numbers 1 - 3
-import numpy as np
+#import numpy as np
 
-myarray = np.array([1,2,3,4,5]) 
+#myarray = np.array([1,2,3,4,5]) 
 
