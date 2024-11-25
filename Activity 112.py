@@ -1,5 +1,5 @@
-class Player:
-    def __init__(self, title, author, available=True):
+class player:
+    def __init__(self, name, position, available =True):
         self.name = name
         self.position= position
         self.available = available
@@ -7,52 +7,77 @@ class Player:
 class squad:
     def __init__(self):
         self.players = []
-    # adds a book to the library (an instance)
+    # adds a player to the squad (an instance)
     def add_player(self, player):
         self.players.append(player)
-    # finds all the books matching the given title 
-    def search_by_title(self, position):
-        # Use lambda to search for books by title
-        search_title = lambda book: book.title.lower() == title.lower()
-        return list(filter(search_title, self.books))
-    # finds all the books matching the given author
-    def search_by_author(self, author):
-        # Use lambda to search for books by author
-        search_author = lambda book: book.author.lower() == author.lower()
-        return list(filter(search_author, self.books))
-    # updates the availability  of a book by its title 
-    def update_availability(self, title, available):
-        # Use lambda to update book availability
-        update_book = lambda book: setattr(book, 'available', available) if book.title.lower() == title.lower() else None
-        list(map(update_book, self.books))
 
-# Create instances of the Book class, these are the books available 
-book1 = Book("Python Programming", "John Smith")
-book2 = Book("Data Structures and Algorithms", "Dave Jones")
-book3 = Book("Web Development with Python", "John Smith")
+    # finds all the names matching the given name in the squad in uppercase using Lambda
+    def search_by_name(self, name):
+        search_name = lambda player: player.name.upper() == name.upper()
+        return list(filter(search_name, self.players))
+    
+
+    # finds all the players  matching the given name using Lambda 
+    def search_by_position(self, position):
+
+        if isinstance(position, str):
+            position = [position]
+        
+        search_position = lambda player: player.position.upper() in [pos.upper() for pos in position]
+        return list(filter(search_position, self.players))
+    
+    # updates the availability  of a player by their name using Lambda
+    def update_availability(self, name, available):
+       
+        update_player = lambda player: setattr(player, 'available', available) if player.name.upper() == name.upper() else None
+        list(map(update_player, self.players))
+
+    def list_available_players(self):
+        return [player for player in self.players if player.available]
+
+# Create instances of the player class, these are the players available to pick from
+player1 = player("Courtouis", "gk")
+player2 = player("ramos", "cb")
+player3 = player("james ", "rb/cb")
+player4 = player("cole","lb")
+player5 = player("terry","cb")
+player6 = player("figo","rm")
+player7 = player("zidane", "acm")
 
 # Create an instance of the Library class
-library = Library()
+squad = squad()
 
-# Add books to the library class above
-library.add_book(book1)
-library.add_book(book2)
-library.add_book(book3)
+# Add players to the squad class above
+squad.add_player(player1)
+squad.add_player(player2)
+squad.add_player(player3)
+squad.add_player(player4)
+squad.add_player(player5)
+squad.add_player(player6)
+squad.add_player(player7)
 
-# Search for books by title
-print("Books with title 'Python Programming':")
-for book in library.search_by_title("Python Programming"):
-    print(f"- {book.title} by {book.author}") 
+# Search for players by name
+print("players available for the squad: ")
+for player in squad.search_by_name("terry"):
+ 
+    print(f"- {player.name} by {player.position}") 
 
-# Search for books by author- change authors name to search 
-print("\nBooks by author 'Dave Jones':")
-for book in library.search_by_author("Dave jones"):
-    print(f"- {book.title} by {book.author}")
+# Search for players by position- change the position to search 
 
-# Update book availability
-library.update_availability("Data Structures and Algorithms", False)
+print("\nplayers in position :")
+for player in squad.search_by_position(["cam", "gk"]):
+    print(f"- {player.name} in {player.position}")
+
+# Update player availability
+squad.update_availability("", False)
+
 
 # Check updated availability
-print("\nAvailability of 'Data Structures and Algorithms':")
-for book in library.search_by_title("Data Structures and Algorithms"):
-    print(f"- {book.title} is {'available' if book.available else 'not in the library at present'}")
+print("\nAvailability of player:")
+for player in squad.search_by_name(""):
+    print(f"- {player.name} is {'available' if player.available else 'not fit for the squad'}")
+
+# prints only the available players 
+print("Available players for matchday")
+for player in squad.list_available_players():
+    print(f"-{player.name} plays in {player.position}")
