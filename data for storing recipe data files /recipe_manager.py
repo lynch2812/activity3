@@ -101,7 +101,8 @@ def view_recipes():
 # for 'recipe in recipes' looks at each recipe in the recipes list 1 by 1 looping through each in the file 
 # it then checks if name is IN recipe and makes the comparison case insensitive
 # if it matches then the program moves to the next step
-# the next step is to print the recipe the found flag turns to true and then break to stop the loop, if not found it generates the message below.
+# the next step is to print the recipe the found flag turns to true and then break to stop the loop, 
+# if not found it generates the message recipe not found
 
 
 
@@ -117,23 +118,28 @@ def search_recipe():
     if not found:
         print("Recipe not found.")
 
-# Function to edit a recipe
-def edit_recipe():
-    name = input("Enter the recipe name to edit: ")
-    recipes = load_recipes()
-    for i, recipe in enumerate(recipes):
-        if name.lower() in recipe.lower():
-            print(f"Editing Recipe: {recipe}")
-            new_ingredients = input("Enter new ingredients (comma separated): ")
-            new_instructions = input("Enter new instructions: ")
-            updated_recipe = f"Recipe: {name}\nIngredients: {new_ingredients}\nInstructions: {new_instructions}"
-            recipes[i] = updated_recipe
-            save_recipes(recipes)
-            print("Recipe updated successfully.")
-            return
-    print("Recipe not found.")
 
-# Function to delete a recipe
+
+
+
+# Function to edit a recipes ingredients and instructions 
+# 
+def edit_recipe():
+    name = input("Enter the recipe name to edit: ") # asks the user to type the name of the recipe to edit 
+    recipes = load_recipes() # Loads the file from load_recipes 
+    for i, recipe in enumerate(recipes): # i makes sure that recipes is numbered when put in list form
+        if name.lower() in recipe.lower():# checks if the name is case-insensitive
+            print(f"Editing Recipe: {recipe}")# if the recipe is found it prints the current versions name.
+            new_ingredients = input("Enter new ingredients (comma separated): ")# asks the user to enter the new ingredients 
+            new_instructions = input("Enter new instructions: ") # asks the user to enter the new instructions
+            updated_recipe = f"Recipe: {name}\nIngredients: {new_ingredients}\nInstructions: {new_instructions}" # updates the old recipe with the new one and prints it out
+            recipes[i] = updated_recipe # i as the variable used to make the items are listed numerically 
+            save_recipes(recipes) # saves recipes for the updated list 
+            print("Recipe updated successfully.") # prints when recipe is updated succesfully 
+            return
+    print("Recipe not found.") # prints if recipe not found 
+
+# Function to delete a recipemove recipe from the file
 def delete_recipe():
     name = input("Enter the recipe name to delete: ")
     recipes = load_recipes()
