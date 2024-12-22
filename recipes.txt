@@ -1,3 +1,4 @@
-Recipe: chicken soup
-Ingredients: soup, chicken
-Instructions: cook on hob 10 minutes
+
+Recipe: gnocchi 
+Ingredients: potato, flour, wheat
+Instructions: put together and cook
